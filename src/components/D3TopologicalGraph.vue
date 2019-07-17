@@ -20,8 +20,8 @@ export default {
           }
         ],
         minCollision: 60,
-        neo4jDataUrl: 'json/neo4jData.json',
         nodeRadius: 25,
+        zoomFit: true,
         onGraphClick: () => {
           console.log('click on graph');
           this.$emit('graphClick')
@@ -35,15 +35,7 @@ export default {
         },
         onRelationshipDoubleClick: (relationship) => {
             console.log('double click on relationship: ' + JSON.stringify(relationship));
-        },
-        zoomFit: true
-      }
-    }
-  },
-  watch: {
-    topoDataProp(val) {
-      if(val) {
-        this.initGraph()
+        }
       }
     }
   },
@@ -53,7 +45,7 @@ export default {
     }
   },
   methods: {
-    initGraph() {
+    init() {
       this.initGraphData()
       this.D3TopoGraph.init('#D3-TopologicalGraph', this.options)
     },
