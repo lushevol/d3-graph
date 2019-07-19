@@ -3,8 +3,8 @@
 </template>
 
 <script>
-import D3TopoGraph from './D3TopoGraph'
-import './css/d3topo.min.css'
+import D3TopoGraph from './D3TopoGraph';
+import './css/d3topo.min.css';
 
 export default {
   name: 'D3TopologicalGraph',
@@ -46,23 +46,23 @@ export default {
   },
   methods: {
     init() {
-      this.initGraphData()
-      this.D3TopoGraph.init('#D3-TopologicalGraph', this.options)
+      this.initGraphData();
+      this.D3TopoGraph.init('#D3-TopologicalGraph', this.options);
     },
     initGraphData() {
-      this.options.d3TopoData = this.topoDataProp
+      this.options.d3TopoData = this.topoDataProp;
     },
     initPageData() {
 
     },
     initPage() {
-      this.initPageData()
+      this.initPageData();
     },
   },
   mounted() {
-    this.initPage()
+    this.initPage();
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
