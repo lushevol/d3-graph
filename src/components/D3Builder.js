@@ -4,7 +4,7 @@
 import * as d3 from 'd3'
 import { event } from 'd3-selection'
 
-class D3TopoGraph {
+class D3Builder {
   constructor(_selector, _options) {
     this.initVar()
     // this.init(this._selector, this._options)
@@ -1069,4 +1069,4 @@ class D3TopoGraph {
   }
 }
 
-export default D3TopoGraph
+export default D3Builder

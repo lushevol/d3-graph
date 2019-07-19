@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { D3TopologicalGraph } from './components/index';
+import D3TopologicalGraph from './components/D3TopologicalGraph.vue';
 
 @Component({
   components: {

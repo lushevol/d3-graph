@@ -2,67 +2,50 @@
   <div id="D3-TopologicalGraph"></div>
 </template>
 
-<script>
-import D3TopoGraph from './D3TopoGraph';
+<script lang="ts">
+import { Component, Vue, Prop } from 'vue-property-decorator';
+import D3Builder from './D3Builder.js';
 import './css/d3topo.min.css';
 
-export default {
-  name: 'D3TopologicalGraph',
-  data() {
-    return {
-      D3TopoGraph: new D3TopoGraph(),
-      options: {
-        highlight: [
-          {
-            class: 'User',
-            property: 'userId',
-            value: 'eisman'
-          }
-        ],
-        minCollision: 60,
-        nodeRadius: 25,
-        zoomFit: true,
-        onGraphClick: () => {
-          console.log('click on graph');
-          this.$emit('graphClick')
-        },
-        onNodeClick: (node) => {
-          console.log('click on node: ' + JSON.stringify(node));
-          this.$emit('nodeClick', { node })
-        },
-        onNodeDoubleClick: (node) => {
-            console.log('double click on node: ' + JSON.stringify(node));
-        },
-        onRelationshipDoubleClick: (relationship) => {
-            console.log('double click on relationship: ' + JSON.stringify(relationship));
-        }
-      }
-    }
-  },
-  props: {
-    topoDataProp: {
-      required: true
-    }
-  },
-  methods: {
-    init() {
-      this.initGraphData();
-      this.D3TopoGraph.init('#D3-TopologicalGraph', this.options);
+@Component
+export default class D3TopologicalGraph extends Vue {
+  @Prop({ required: true }) public readonly topoDataProp: any;
+  public D3Builder = new D3Builder();
+  public options = {
+    d3TopoData: null,
+    highlight: [
+      {
+        class: 'User',
+        property: 'userId',
+        value: 'eisman',
+      },
+    ],
+    minCollision: 60,
+    nodeRadius: 25,
+    zoomFit: true,
+    onGraphClick: () => {
+      // console.log('click on graph');
+      this.$emit('graphClick');
     },
-    initGraphData() {
-      this.options.d3TopoData = this.topoDataProp;
+    onNodeClick: (node: any) => {
+      // console.log('click on node: ' + JSON.stringify(node));
+      this.$emit('nodeClick', { node });
     },
-    initPageData() {
-
+    onNodeDoubleClick: (node: any) => {
+        // console.log('double click on node: ' + JSON.stringify(node));
     },
-    initPage() {
-      this.initPageData();
+    onRelationshipDoubleClick: (relationship: any) => {
+        // console.log('double click on relationship: ' + JSON.stringify(relationship));
     },
-  },
-  mounted() {
-    this.initPage();
+  };
+  public init() {
+    this.initGraphData();
+    this.D3Builder.init('#D3-TopologicalGraph', this.options);
   }
-};
+  public initGraphData() {
+    this.options.d3TopoData = this.topoDataProp;
+  }
+}
 </script>
 
 <style lang="scss" scoped>
