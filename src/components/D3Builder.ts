@@ -1,6 +1,9 @@
 import * as d3 from 'd3';
 import { event } from 'd3-selection';
 
+// plugins
+import { fontAwesomeIcons, Colors } from './utils.js';
+
 class D3Builder {
   public d3: any;
   public container: any;
@@ -45,6 +48,7 @@ class D3Builder {
   public constructor() {
     this.InitVar();
   }
+
   private InitVar() {
     this.d3 = d3;
     this.d3.getEvent = () => event;
@@ -71,9 +75,9 @@ class D3Builder {
     this.numClasses = 0;
     this.options = {
       arrowSize: 4,
-      colors: this.colors(),
+      colors: Colors,
       highlight: undefined,
-      iconMap: this.fontAwesomeIcons(),
+      iconMap: fontAwesomeIcons,
       icons: undefined,
       imageMap: {},
       images: undefined,
