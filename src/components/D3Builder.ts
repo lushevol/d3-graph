@@ -49,6 +49,19 @@ class D3Builder {
     this.InitVar();
   }
 
+  public init(selector: any, options: any) {
+    this.mergeObject(this.options, _options);
+  }
+
+  /**
+   * mergeObject 合并对象
+   */
+  public mergeObject(target: any, source: any) {
+    Object.keys(source).forEach((property: string) => {
+      target[property] = source[property];
+    });
+  }
+
   private InitVar() {
     this.d3 = d3;
     this.d3.getEvent = () => event;
