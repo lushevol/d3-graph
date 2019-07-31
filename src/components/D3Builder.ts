@@ -50,7 +50,7 @@ class D3Builder {
   }
 
   public init(selector: any, options: any) {
-    this.mergeObject(this.options, _options);
+    this.mergeObject(this.options, options);
   }
 
   /**
