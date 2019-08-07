@@ -19,8 +19,8 @@ export const Colors = [
   '#c9d96f', // pistacchio
   '#47991f', // green #3
   '#70edee', // turquoise
-  '#ff75ea' // pink
-]
+  '#ff75ea', // pink
+];
 
 export const Icons = {
   'glass': 'f000',
@@ -656,5 +656,5 @@ export const Icons = {
   'yoast': 'f2b1',
   'themeisle': 'f2b2',
   'google-plus-circle,google-plus-official': 'f2b3',
-  'fa,font-awesome': 'f2b4'
-}
+  'fa,font-awesome': 'f2b4',
+};
