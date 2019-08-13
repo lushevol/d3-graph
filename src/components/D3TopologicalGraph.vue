@@ -1,10 +1,17 @@
+<!--
+ * @Description: 
+ * @Author: lushevol
+ * @Date: 2019-07-18 21:09:42
+ * @LastEditors: lushevol
+ * @LastEditTime: 2019-08-13 20:53:12
+ -->
 <template>
   <div id="D3-TopologicalGraph"></div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
-import D3Builder from './D3Builder.js';
+import D3Builder from './D3Builder.ts';
 import './css/d3topo.min.css';
 
 @Component
