@@ -1,3 +1,10 @@
+/*
+ * @Description: 主函数
+ * @Author: lushevol
+ * @Date: 2019-07-20 21:08:12
+ * @LastEditors: lushevol
+ * @LastEditTime: 2019-08-14 21:31:01
+ */
 import { d3, event, Icons, Colors } from './plugins.js';
 
 class D3Builder {
@@ -86,6 +93,11 @@ class D3Builder {
     //   .attr('operator', 'xor')
   }
 
+  /**
+   * @description:
+   * @param {type}
+   * @return:
+   */
   public unitaryNormalVector(source: any, target: any, newLength: any = 1) {
     const center = { x: 0, y: 0 };
     const vector = this.unitaryVector(source, target, newLength);
