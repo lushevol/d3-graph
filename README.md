@@ -1,5 +1,7 @@
 # d3-graph
 
+personal d3 + TypeScript project
+
 ## Project setup
 ```
 yarn install
