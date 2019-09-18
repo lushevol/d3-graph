@@ -1,6 +1,6 @@
 # d3-graph
 
-personal d3 + TypeScript project
+personal d3 graph + TypeScript project
 
 ## Project setup
 ```
