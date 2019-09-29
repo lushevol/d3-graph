@@ -3,7 +3,7 @@
  * @Author: lushevol
  * @Date: 2019-07-20 21:08:12
  * @LastEditors: lushevol
- * @LastEditTime: 2019-08-14 21:31:01
+ * @LastEditTime: 2019-09-29 18:27:36
  */
 import { d3, event, Icons, Colors } from './plugins.js';
 
@@ -36,7 +36,7 @@ class D3Builder {
     this.InitVar();
   }
 
-  public init(selector: any, options: any) {
+  public init(selector: HTMLElement, options: any) {
     this.mergeObject(this.options, options);
     this.selector = selector;
     this.container = this.d3.select(this.selector);
